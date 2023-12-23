@@ -1,0 +1,65 @@
+h1 {
+  font-family: "Indie Flower";
+  font-size: 3rem;
+  margin: 30px 0 10px;
+  justify-content: center;
+  align-items: center;
+  text-justify: center;
+}
+
+.header {
+  @include verticalCenter;
+  flex-direction: column;
+  input {
+    margin: 10px 0 50px;
+  }
+}
+input {
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+.cards-container :nth-child(2n) {
+  direction: rtl;
+}
+//   .img-container {
+//   }
+//   .info-container {
+//   }
+// }
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+.wait {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  .spin {
+    opacity: 1;
+    &::before {
+      animation: 1.5s linear infinite spinner;
+      animation-play-state: inherit;
+      border: solid 5px lightblue;
+      border-bottom-color: black;
+      border-radius: 50%;
+      content: "";
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      will-change: transform;
+    }
+  }
+  h3 {
+    color: black;
+  }
+}
